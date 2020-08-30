@@ -1,7 +1,5 @@
 const url = "https://api.rawg.io/api/games?dates=2019-01-01,2019-12-31&ordering=-rating";
-const names = document.querySelector(".name");
-const ratings = document.querySelector(".ratings");
-const tags = document.querySelector(".tags");
+const container = document.querySelector(".container");
 const handler = document.querySelector(".handler");
 
 async function call() {
@@ -15,11 +13,8 @@ async function call() {
             if (i === 8){
                 break;
             }
-            names.innerHTML += facts[i].name;
-            ratings.innerHTML += facts[i].rating;
-            tags.innerHTML += facts[i].tags.length;
-        }
-}
+            container.innerHTML += facts[i].name + " " + facts[i].rating + " " + facts[i].tags.length + " ";        }
+} 
 try{
 call();
 handler.innerHTML = "success";
