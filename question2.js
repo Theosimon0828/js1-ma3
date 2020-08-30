@@ -13,7 +13,14 @@ async function call() {
             if (i === 8){
                 break;
             }
-            container.innerHTML += facts[i].name + " " + facts[i].rating + " " + facts[i].tags.length + " ";
+            const html = `
+            <div>
+                <p> ${facts[i].name} </p>
+                <p> ${facts[i].rating} </p>
+                <p> ${facts[i].tags.length} </p>
+            </div>
+            `
+            container.innerHTML += html;   
         }
 } 
 try{
